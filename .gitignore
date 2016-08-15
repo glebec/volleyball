@@ -1,0 +1,23 @@
+# installed packages (better: `npm install` / `bower install`)
+node_modules
+bower_components
+
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Vim swap files
+*.sw?
+
+# IDE files
+.idea
+.vscode

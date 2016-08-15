@@ -1,0 +1,3 @@
+extends: fullstack
+rules:
+  semi: [1, never]
