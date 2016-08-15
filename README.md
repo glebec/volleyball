@@ -1,3 +1,7 @@
+[![npm version](https://img.shields.io/npm/v/volleyball.svg?maxAge=3600)](https://www.npmjs.com/package/potential)
+[![Codeship](https://img.shields.io/codeship/6f38c760-44b0-0134-bda6-02154be91b77.svg)](https://codeship.com/projects/155189)
+[![Greenkeeper.io is keeping this repo's dependencies up to date](https://img.shields.io/badge/greenkeeper.io-monitoring-brightgreen.svg?maxAge=3600)](https://greenkeeper.io/)
+
 # 🏐 Volleyball
 
 ### Small Express HTTP logger for debugging asynchronous requests and responses
@@ -8,6 +12,8 @@ const volleyball = require('volleyball')
 
 app.use(volleyball)
 ```
+
+![Screenshot](https://cloud.githubusercontent.com/assets/7230206/17653596/ff26ea3a-6265-11e6-8b6d-5f8f5e3f19c6.jpg)
 
 Volleyball is a minimal Connect-style middleware function which logs incoming requests and outgoing responses as separate events. It optionally supports the [`debug`](https://github.com/visionmedia/debug#readme) module.
 
