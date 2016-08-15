@@ -1,9 +1,9 @@
 {
   "name": "volleyball",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "🏐 Tiny HTTP logger for Express showing asynchronous requests and responses",
-  "engines" : {
-    "node" : "^6.0.0"
+  "engines": {
+    "node": "^6.0.0"
   },
   "homepage": "https://github.com/glebec/volleyball",
   "main": "lib/volleyball.js",
