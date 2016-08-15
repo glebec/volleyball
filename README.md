@@ -13,7 +13,7 @@ const volleyball = require('volleyball')
 app.use(volleyball)
 ```
 
-![Screenshot](https://cloud.githubusercontent.com/assets/7230206/17653596/ff26ea3a-6265-11e6-8b6d-5f8f5e3f19c6.jpg)
+![Screenshot](https://cloud.githubusercontent.com/assets/7230206/17654589/912d68b2-6272-11e6-9b49-1858fe20c6a6.jpg)
 
 Volleyball is a minimal Connect-style middleware function which logs incoming requests and outgoing responses as separate events. It optionally supports the [`debug`](https://github.com/visionmedia/debug#readme) module.
 
