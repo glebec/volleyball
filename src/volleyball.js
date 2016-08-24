@@ -8,32 +8,32 @@ const makeId = require('./id')
 
 const sp = ' '
 
-module.exports = new Volleyball()
+module.exports = Volleyball() // eslint-disable-line new-cap
 
 function Volleyball (config = {}) {
-  const logger = getLogger(config.debug)
+
+  // items shared across multiple req-res cycles, for a given volleyball
+  const log = getLogger(config.debug)
 
   function volleyball (req, res, next) {
-    const shared = {
-      logger: logger,
+    // items shared between the request and response of just one cycle
+    const cycle = {
+      log: log,
       id: makeId(),
       time: process.hrtime()
     }
 
-    logReq(req, shared)
-
-    res.on('finish', () => logRes(res, shared))
-    res.on('close', () => logClose(res, shared))
+    logReq(req, cycle)
+    res.on('finish', () => logRes(res, cycle))
+    res.on('close', () => logClose(res, cycle))
 
     next()
   }
-  volleyball.custom = volleyballFactory
+
+  // factory method which does not expose any of the library internals
+  volleyball.custom = (...args) => Volleyball(...args) // eslint-disable-line new-cap
 
   return volleyball
-}
-
-function volleyballFactory (...args) {
-  return new Volleyball(...args)
 }
 
 function getLogger (debugChoice) {
@@ -41,51 +41,55 @@ function getLogger (debugChoice) {
   if (debugChoice === true) return debug('http')
   if (typeof debugChoice === 'string') return debug(debugChoice)
   if (typeof debugChoice === 'function') return debugChoice
+  throw Error('Invalid option for debug')
 }
 
 function defaultLogger (str) {
   process.stdout.write(str + '\n')
 }
 
-function logReq (req, shared) {
+function logReq (req, cycle) {
   const bytes = +req.headers['content-length']
   const type = req.headers['content-type']
 
-  let reqLine = `${shared.id} ${chalk.dim('——>')} `
+  let reqLine = `${cycle.id} ${chalk.dim('——>')} `
   reqLine += `${chalk.bold.underline(req.method)} ${req.url} `
   if (bytes) reqLine += chalk.blue(filesize(bytes)) + sp
   if (type) reqLine += chalk.blue.dim(type)
 
-  shared.logger(reqLine)
+  cycle.log(reqLine)
 }
 
-function logRes (res, shared) {
+function logRes (res, cycle) {
   const status = res.statusCode
   const meaning = http.STATUS_CODES[status]
   const bytes = +res.getHeader('content-length')
   const type = res.getHeader('content-type')
 
-  let statusColor
-  if (status >= 500) statusColor = 'red'
-  else if (status >= 400) statusColor = 'yellow'
-  else if (status >= 300) statusColor = 'cyan'
-  else if (status >= 200) statusColor = 'green'
-  else statusColor = 'reset'
+  const statusColor = colorForStatus(status)
 
-  let resLine = `${shared.id} ${chalk.dim('<——')} `
+  let resLine = `${cycle.id} ${chalk.dim('<——')} `
   resLine += chalk[statusColor](`${status} ${meaning}`) + sp
   if (bytes) resLine += chalk.blue(filesize(bytes)) + sp
   if (type) resLine += chalk.blue.dim(type) + sp
-  resLine += chalk.dim(`(<—> ${msDiff(shared.time)} ms)`)
+  resLine += chalk.dim(`(<—> ${msDiff(cycle.time)} ms)`)
 
-  shared.logger(resLine)
+  cycle.log(resLine)
 }
 
-function logClose (res, shared) {
-  let closeLine = `${shared.id} ${chalk.dim('—X—')} `
+function logClose (res, cycle) {
+  let closeLine = `${cycle.id} ${chalk.dim('—X—')} `
   closeLine += chalk.red('connection closed before res end/flush')
 
-  shared.logger(closeLine)
+  cycle.log(closeLine)
+}
+
+function colorForStatus (status) {
+  if (status >= 500) return 'red'
+  if (status >= 400) return 'yellow'
+  if (status >= 300) return 'cyan'
+  if (status >= 200) return 'green'
+  return 'reset'
 }
 
 function msDiff (time) {
