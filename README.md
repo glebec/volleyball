@@ -4,6 +4,8 @@
 
 # 🏐 Volleyball
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/glebec/volleyball.svg)](https://greenkeeper.io/)
+
 ### Small Express HTTP logger for debugging asynchronous requests and responses
 
 ```js
