@@ -1,6 +1,6 @@
 [![npm version](https://img.shields.io/npm/v/volleyball.svg?maxAge=3600)](https://www.npmjs.com/package/volleyball)
 [![Codeship](https://img.shields.io/codeship/6f38c760-44b0-0134-bda6-02154be91b77.svg)](https://codeship.com/projects/168493)
-[![Greenkeeper.io is keeping this repo's dependencies up to date](https://img.shields.io/badge/greenkeeper.io-monitoring-brightgreen.svg?maxAge=3600)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/glebec/volleyball.svg)](https://greenkeeper.io/)
 
 # 🏐 Volleyball
 
