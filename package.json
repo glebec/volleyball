@@ -21,7 +21,7 @@
     "eslint": "^3.3.0",
     "eslint-config-fullstack": "^3.0.0",
     "express": "^4.14.0",
-    "mocha": "^3.0.2",
+    "mocha": "^4.0.0",
     "supertest": "^2.0.0"
   },
   "dependencies": {
