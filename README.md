@@ -1,5 +1,5 @@
 [![npm version](https://img.shields.io/npm/v/volleyball.svg?maxAge=3600)](https://www.npmjs.com/package/volleyball)
-[![Codeship](https://img.shields.io/codeship/6f38c760-44b0-0134-bda6-02154be91b77.svg)](https://codeship.com/projects/168493)
+[![Build Status](https://travis-ci.org/glebec/volleyball.svg?branch=master)](https://travis-ci.org/glebec/volleyball)
 [![Greenkeeper badge](https://badges.greenkeeper.io/glebec/volleyball.svg)](https://greenkeeper.io/)
 
 # 🏐 Volleyball
