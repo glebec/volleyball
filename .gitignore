@@ -1,4 +1,10 @@
-# installed packages (better: `npm install` / `bower install`)
+# Precommit build flag hack
+.commit
+
+# Cache
+.eslintcache
+
+# Packages
 node_modules
 bower_components
 

@@ -1,0 +1,9 @@
+#!/bin/sh
+if [ -a .commit ]
+then
+  echo ".commit found, building lib and adding to commit"
+  rm .commit
+  git add lib
+  git commit --amend -C HEAD --no-verify
+fi
+exit

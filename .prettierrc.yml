@@ -1,0 +1,9 @@
+# printWidth: 80 # 80
+# tabWidth: 4 # 2
+# useTabs: true # false
+semi: false # true
+singleQuote: true # false
+trailingComma: all # none | es5 | all
+# bracketSpacing: true # true
+# jsxBracketSameLine: false # false
+# arrowParens: avoid # avoid | always

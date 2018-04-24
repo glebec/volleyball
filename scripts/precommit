@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "Creating temporary .commit flag"
+touch .commit
+exit

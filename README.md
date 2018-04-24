@@ -21,9 +21,9 @@ Volleyball is a minimal Connect-style middleware function which logs incoming re
 
 Logging HTTP cycles can be approached in several ways, each with its own drawbacks:
 
-* Log only upon **request**. Drawback: we cannot log the corresponding response, which happens later (if at all).
-* Log only upon **response**, attaching the request. Drawback A: if the server never sends a response, e.g. due to a bug, the request will not be logged either. Drawback B: two temporally distinct events are conflated, misleadingly.
-* Log both upon **request** and **response**. Drawback: it is not necessarily clear which responses are for which requests.
+*   Log only upon **request**. Drawback: we cannot log the corresponding response, which happens later (if at all).
+*   Log only upon **response**, attaching the request. Drawback A: if the server never sends a response, e.g. due to a bug, the request will not be logged either. Drawback B: two temporally distinct events are conflated, misleadingly.
+*   Log both upon **request** and **response**. Drawback: it is not necessarily clear which responses are for which requests.
 
 Volleyball takes the last approach, and assigns randomly-generated ids to label request-response pairs. It is designed for student project development, teaching beginning programmers how HTTP servers and asynchronicity work. It may also be useful as a low-configuration debug tool.
 
@@ -47,19 +47,19 @@ app.use(logger)
 
 The `debug` property logs using the [`debug`](https://github.com/visionmedia/debug#readme) module. It supports the following values:
 
-value | result
-----|----
-`true` | uses a new debug instance with a default namespace of `'http'`
-string | uses a new debug instance with a custom namespace
-function | uses any function, such as a pre-generated debug instance. Note that the function will be called with colorized strings.
+| value    | result                                                                                                                   |
+| -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `true`   | uses a new debug instance with a default namespace of `'http'`                                                           |
+| string   | uses a new debug instance with a custom namespace                                                                        |
+| function | uses any function, such as a pre-generated debug instance. Note that the function will be called with colorized strings. |
 
 ## Related and Alternatives
 
 For more powerful, configurable, and compatible logging needs, check out:
 
-* [debug](https://github.com/visionmedia/debug#readme)
-* [morgan](https://github.com/expressjs/morgan#readme)
-* [morgan-debug](https://github.com/ChiperSoft/morgan-debug#readme)
-* [winston](https://github.com/winstonjs/winston#readme)
-* [express-winston](https://github.com/bithavoc/express-winston#readme)
-* [node-bunyan](https://github.com/trentm/node-bunyan/#readme)
+*   [debug](https://github.com/visionmedia/debug#readme)
+*   [morgan](https://github.com/expressjs/morgan#readme)
+*   [morgan-debug](https://github.com/ChiperSoft/morgan-debug#readme)
+*   [winston](https://github.com/winstonjs/winston#readme)
+*   [express-winston](https://github.com/bithavoc/express-winston#readme)
+*   [node-bunyan](https://github.com/trentm/node-bunyan/#readme)
