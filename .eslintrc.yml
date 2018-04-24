@@ -1,4 +1,2 @@
 root: true
 extends: fullstack
-rules:
-  semi: [1, never]
