@@ -4,5 +4,5 @@ language: node_js
 node_js:
   - node # uses most recent stable node version
 install:
-  - npm i -g npm@5.7.1 # delete once 5.7.X is out of "pre-release"
-  - npm ci             # faster, goes only from package-lock
+  - npm i -g npm@6
+  - npm ci # faster, goes only from package-lock

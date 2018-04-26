@@ -7,11 +7,14 @@
 	},
 	"homepage": "https://github.com/glebec/volleyball",
 	"main": "lib/volleyball.js",
+	"files": [
+		"lib"
+	],
 	"scripts": {
 		"precommit": "./scripts/precommit && lint-staged",
 		"postcommit": "./scripts/postcommit",
 		"prettify": "prettier --write \"**/*.{js,jsx,json,css,scss,md}\"",
-		"test": "DEBUG=http,custom mocha",
+		"test": "npm run build && DEBUG=http,custom mocha",
 		"lint": "eslint **/*.js --ignore-path .gitignore --ignore-pattern lib",
 		"build": "babel src -d lib"
 	},
