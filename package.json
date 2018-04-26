@@ -6,17 +6,17 @@
 		"node": ">=4.0.0"
 	},
 	"homepage": "https://github.com/glebec/volleyball",
-	"main": "lib/index.js",
+	"main": "lib/volleyball.js",
 	"files": [
-		"lib/index.js"
+		"lib"
 	],
 	"scripts": {
 		"precommit": "./scripts/precommit && lint-staged",
 		"postcommit": "./scripts/postcommit",
 		"prettify": "prettier --write \"**/*.{js,jsx,json,css,scss,md}\"",
-		"test": "DEBUG=http,custom mocha",
+		"test": "npm run build && DEBUG=http,custom mocha",
 		"lint": "eslint **/*.js --ignore-path .gitignore --ignore-pattern lib",
-		"build": "babel src --out-file lib/index.js"
+		"build": "babel src -d lib"
 	},
 	"lint-staged": {
 		"*.{js,jsx}": [

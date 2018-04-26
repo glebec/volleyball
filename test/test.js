@@ -5,7 +5,7 @@ const express = require('express')
 const stripANSI = require('strip-ansi')
 const debug = require('debug')
 debug.log = console.log.bind(console)
-const volleyball = require('../lib')
+const volleyball = require('../lib/volleyball')
 
 describe('volleyball', function() {
 	it('is middleware', function() {
