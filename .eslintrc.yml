@@ -1,2 +1,2 @@
 root: true
-extends: fullstack
+extends: [fullstack, prettier]
