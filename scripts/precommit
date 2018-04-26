@@ -1,4 +1,4 @@
 #!/bin/sh
 echo "Creating temporary .commit flag"
-touch .commit
+echo "Temporary flag file, you can safely delete me." > .commit
 exit

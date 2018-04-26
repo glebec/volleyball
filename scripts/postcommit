@@ -3,6 +3,7 @@ if [ -a .commit ]
 then
 	echo ".commit found, building lib and adding to commit"
 	rm .commit
+	npm run build
 	git add lib
 	git commit --amend -C HEAD --no-verify
 fi
