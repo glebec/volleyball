@@ -1,8 +1,8 @@
+# 🏐 Volleyball
+
 [![npm version](https://img.shields.io/npm/v/volleyball.svg?maxAge=3600)](https://www.npmjs.com/package/volleyball)
 [![Build Status](https://travis-ci.org/glebec/volleyball.svg?branch=master)](https://travis-ci.org/glebec/volleyball)
 [![Greenkeeper badge](https://badges.greenkeeper.io/glebec/volleyball.svg)](https://greenkeeper.io/)
-
-# 🏐 Volleyball
 
 ### Small Express HTTP logger for debugging asynchronous requests and responses
 
