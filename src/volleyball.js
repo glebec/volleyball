@@ -23,8 +23,13 @@ function Volleyball(config = {}) {
 		}
 
 		logReq(req, cycle)
-		res.on('finish', () => logRes(res, cycle))
-		res.on('close', () => logClose(res, cycle))
+
+		const handleUnexpectedClose = () => logClose(res, cycle)
+		res.on('finish', () => {
+			logRes(res, cycle)
+			res.removeListener('close', handleUnexpectedClose)
+		})
+		res.on('close', handleUnexpectedClose)
 
 		next()
 	}
