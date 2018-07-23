@@ -38,7 +38,7 @@
 		"babel-eslint": "^8.2.3",
 		"chai": "^4.1.2",
 		"eslint": "^4.19.1",
-		"eslint-config-fullstack": "^5.0.0",
+		"eslint-config-fullstack": "^6.0.0",
 		"eslint-config-prettier": "^2.9.0",
 		"eslint-plugin-react": "^7.7.0",
 		"express": "^4.16.3",
