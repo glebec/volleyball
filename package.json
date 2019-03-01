@@ -32,9 +32,9 @@
 	"author": "Gabriel Lebec <glebec@gmail.com> (https://github.com/glebec)",
 	"license": "MIT",
 	"devDependencies": {
-		"@babel/cli": "^7.0.0-beta.46",
-		"@babel/core": "^7.0.0-beta.46",
-		"@babel/preset-env": "^7.0.0-beta.46",
+		"@babel/cli": "^7.2.3",
+		"@babel/core": "^7.3.4",
+		"@babel/preset-env": "^7.3.4",
 		"babel-eslint": "^8.2.3",
 		"chai": "^4.1.2",
 		"eslint": "^4.19.1",
