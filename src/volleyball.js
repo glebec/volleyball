@@ -9,6 +9,7 @@ const makeId = require('./id')
 const sp = ' '
 
 module.exports = Volleyball() // eslint-disable-line new-cap
+module.exports.makeId = makeId
 
 function Volleyball(config = {}) {
 	// items shared across multiple req-res cycles, for a given volleyball
@@ -18,7 +19,7 @@ function Volleyball(config = {}) {
 		// items shared between the request and response of just one cycle
 		const cycle = {
 			log: log,
-			id: makeId(),
+			id: config.makeId ? config.makeId() : makeId(),
 			time: process.hrtime(),
 		}
 

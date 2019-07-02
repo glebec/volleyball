@@ -50,6 +50,18 @@ describe('An Express app', function() {
 		it('logs requests and responses', test)
 	})
 
+	describe('using volleyball with custom makeId', () => {
+		function makeId() {
+			return 'IDID'
+		}
+
+		beforeEach(function() {
+			app.use(volleyball.custom({ makeId }))
+		})
+
+		it('logs reuests and responses', test)
+	})
+
 	describe('using volleyball with debug true', function() {
 		beforeEach(function() {
 			app.use(volleyball.custom({ debug: true }))
