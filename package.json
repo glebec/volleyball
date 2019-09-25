@@ -51,7 +51,7 @@
 	"dependencies": {
 		"chalk": "^2.4.0",
 		"debug": "^3.1.0",
-		"filesize": "^3.6.1"
+		"filesize": "^4.2.1"
 	},
 	"repository": {
 		"type": "git",
